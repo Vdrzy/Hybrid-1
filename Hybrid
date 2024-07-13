@@ -1,0 +1,21 @@
+local game = game
+local plrs = game.Players
+local plr = plrs.LocalPlayer
+local bp = plr.Backpack
+local HUD = plr.PlayerGui.HUD
+local ChatFrame = HUD.Bottom.ChatGui.TextLabel
+local task = task
+
+function ChatWait(t)
+    ChatFrame:GetPropertyChangedSignal('Text'):Wait()
+    task.wait(t)
+end
+
+bp.ServerTraits.ChatStart:FireServer(workspace.FriendlyNPCs['Character Slot Changer']) ChatWait(.26)
+bp.ServerTraits.ChatAdvance:FireServer({'Yes'}) ChatWait(.26)
+bp.ServerTraits.ChatAdvance:FireServer({'k'}) ChatWait(.26)
+bp.ServerTraits.ChatAdvance:FireServer({'Slot'..getgenv().slot})
+task.wait(getgenv().delay)
+bp.ServerTraits.ChatStart:FireServer(workspace.FriendlyNPCs['Hair Stylist']) task.wait(getgenv().delay)
+bp.ServerTraits.ChatAdvance:FireServer({'Yes'}) task.wait(.46)
+bp.HairScript.RemoteEvent:FireServer('woah')
