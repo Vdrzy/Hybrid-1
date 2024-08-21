@@ -14,8 +14,8 @@ local nslot = getgenv().Namek
 
 -- Dont Change --
 
-local Time = .27
-local CTime = .27
+local Time = .28
+local CTime = .3
 local QTime = .9
 local tries = 0
 local reps = 0
@@ -174,11 +174,11 @@ function CharAdded(Cac)
 
 	if IsDummy() == true then
         warn('Dummy')
-        SwitchSlot('Slot'..pslot, .015)
+        SwitchSlot('Slot'..pslot, .01)
         Last = tick()
         task.wait(Time)
         Kami()
-        task.wait(.2)
+        task.wait(.3)
         warn('Check')
         if pgui['HUD']['Bottom']['ChatGui']['TextLabel'].Text == 'Mr Popo is a nice guy' then
             if not plr.Character.HumanoidRootPart:FindFirstChild('Booster') then
@@ -188,7 +188,7 @@ function CharAdded(Cac)
         end
 	elseif IsDummy() == false then
         warn('NotDummy')
-		SwitchSlot('Slot'..nslot, .04)
+		SwitchSlot('Slot'..nslot, .02)
         Last = tick()
 	end
 
