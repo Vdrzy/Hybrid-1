@@ -178,7 +178,7 @@ function CharAdded(Cac)
         Last = tick()
         task.wait(Time)
         Kami()
-        task.wait(.3)
+        task.wait(.6)
         warn('Check')
         if pgui['HUD']['Bottom']['ChatGui']['TextLabel'].Text == 'Mr Popo is a nice guy' then
             if not plr.Character.HumanoidRootPart:FindFirstChild('Booster') then
